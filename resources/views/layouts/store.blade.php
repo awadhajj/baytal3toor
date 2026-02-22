@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', config('store.name')) - {{ config('store.name') }}</title>
+    <meta name="description" content="@yield('meta_description', 'متجر متخصص في بيع أرقى العطور والبخور العربية والعالمية')">
+
+    {{-- Open Graph --}}
+    <meta property="og:title" content="@yield('title', config('store.name')) - {{ config('store.name') }}">
+    <meta property="og:description" content="@yield('meta_description', 'متجر متخصص في بيع أرقى العطور والبخور العربية والعالمية')">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="@yield('og_image', asset('build/assets/og-default.jpg'))">
+    <meta property="og:locale" content="ar_SA">
+    <meta property="og:site_name" content="{{ config('store.name') }}">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', config('store.name')) - {{ config('store.name') }}">
+    <meta name="twitter:description" content="@yield('meta_description', 'متجر متخصص في بيع أرقى العطور والبخور العربية والعالمية')">
+    <meta name="twitter:image" content="@yield('og_image', asset('build/assets/og-default.jpg'))">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
