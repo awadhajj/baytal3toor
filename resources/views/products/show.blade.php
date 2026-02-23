@@ -3,7 +3,7 @@
 @section('title', $product->name)
 @section('meta_description', Str::limit($product->description ?? $product->name . ' - ' . $product->brand, 160))
 @section('og_type', 'product')
-@section('og_image', $product->image ? asset('storage/' . $product->image) : asset('build/assets/og-default.jpg'))
+@section('og_image', $product->image ? asset('storage/' . $product->image) : asset('logo.png'))
 
 @section('content')
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
